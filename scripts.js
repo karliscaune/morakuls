@@ -10,6 +10,7 @@ function askMorakul() {
     let question = $("#answer-text").val();
     if (question.length < 2) {
         $("#answer-text").addClass("invalid");
+        $("#answer-text").focus();
     } else {
         $("#answer-text").removeClass("invalid");
         let prediction = Math.random();
@@ -44,6 +45,7 @@ function resetFields() {
     $(".result").removeClass("morra-fly-in");
     $(".result").removeClass("content-visible");
     $("#answer-text").val("");
+    $("#answer-text").focus();
 }
 
 $("#askButton").click(function() {
