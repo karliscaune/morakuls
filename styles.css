@@ -1,0 +1,233 @@
+/* Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+*:focus, *:active {
+    outline: 0;
+}
+
+body, html {
+    overflow: hidden;
+}
+
+.wrapper {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+}
+
+.ask, .morakuls-bg {
+    display: flex;
+    width: 50%;
+    height: 100vh;
+    background: black;
+}
+
+.ask {
+    flex-direction: column;
+    justify-content: center;
+    padding: 100px;
+}
+
+.ask-button {
+    border: none;
+    background-color: royalblue;
+    color: white;
+    font-size: 24px;
+    padding: 15px;
+    margin-top: 25px;
+    transition: all 0.3s linear;
+}
+
+.ask-button:hover {
+    cursor: pointer;
+    background-color: orangered;
+}
+
+input {
+    font-size: 18px;
+    background: black;
+    border: 2px solid white;
+    padding: 15px;
+}
+
+label {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.morakuls-bg {
+    position: relative;
+    overflow: hidden;
+}
+
+.background {
+    width: calc(50vw + 50px);
+    height: calc(100vh + 50px);
+    position: absolute;
+    left: -25px;
+    top: -25px;
+    transform-origin: 50% 50%;
+    background-image: url(morra.jpg);
+    background-size: cover;
+    background-position: center;
+    animation: zoom 8s ease;
+    animation-iteration-count: infinite;
+}
+
+@keyframes zoom {
+    0% {transform: scale(0.95)}
+    50% {transform: scale(1.05)}
+    100% {transform: scale(0.95)}
+}
+
+.result {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    left: 0;
+    top: 0;
+    transition: opacity 1s linear;
+}
+
+.result.visible {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.result-wrap {
+    text-align: center;
+}
+
+.morra-fly {
+    width: 600px;
+    height: 300px;
+    display: block;
+    background-image: url(morra_lido.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    bottom: -150px;
+    left: -300px;
+    transform-origin: center;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.morra-fly-in .morra-fly {
+    animation: fly 5s;
+    animation-iteration-count: 1;
+}
+
+.result-wrap {
+    opacity: 0;
+    transition: opacity 1s linear;
+}
+
+.content-visible .result-wrap {
+    opacity: 1;
+}
+
+@keyframes fly {
+    0% {
+        transform: scale(0.5) translate(0, 0) rotate(-50deg);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1) translate(50vw, -50vh) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.5) translate(200vw, 0) rotate(50deg);
+        opacity: 0;
+    }
+}
+
+.question {
+    font-size: 30px;
+    margin: 30px;
+    font-style: italic;
+}
+
+.response {
+    font-size: 90px;
+    font-weight: bold;
+    margin: 30px;
+}
+
+.result-wrap h2 {
+    color: rgba(255,255,255,0.5);
+}
+
+#resetButton {
+    border: 2px solid rgba(255,255,255,0.5);
+    background: transparent;
+    font-size: 18px;
+    margin: 18px;
+    padding: 10px;
+}
+
+#resetButton:hover {
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        flex-direction: column;
+    }
+
+    .ask, .morakuls-bg {
+        width: 100vw;
+    }
+
+    .morakuls-bg  {
+        height: 35vh;
+    }
+
+    .ask {
+        padding: 20px;
+        height: 65vh;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .ask-button {
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    input {
+        padding: 10px;
+    }
+
+    .background {
+        width: calc(100vw + 50px);
+        height: calc(35vh + 50px);
+    }
+
+    .morra-fly {
+        width: 300px;
+        height: 150px;
+        bottom: -75px;
+        left: -150px;
+        transform-origin: center;
+        opacity: 0;
+        pointer-events: none;
+    }
+    
+}

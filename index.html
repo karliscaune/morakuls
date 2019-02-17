@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Morākuls</title>
+	<meta name="Resource-type" content="Document" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="ask">
+            <h1>Morākuls spēj atbildēt ar "Jā" un "Nē".</h1>
+            <label>Tavs jautājums:</label>
+            <input type="text" id="answer-text">
+            <button class="ask-button" id="askButton">Jautā Morākulam</button>
+        </div>
+        <div class="morakuls-bg">
+            <div class="background"></div>
+        </div>
+    </div>
+
+    <div class="result">
+        <div class="morra-fly"></div>
+        <div class="result-wrap">
+            <h2>Tu jautāji:</h2>
+            <p class="question" id="question"></p>
+            <h2>Morākuls atbild...</h2>
+            <p class="response" id="response"></p>
+            <button id="resetButton">Jautā Morākulam vēl...</button>
+        </div>
+    </div>
+
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="scripts.js"></script>
+</body>
+</html>
