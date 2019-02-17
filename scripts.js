@@ -5,13 +5,13 @@ function askMorakul() {
     let prediction = Math.random();
     let answer = "";
     if (prediction <= 0.3) {
-        answer = "Nē";
+        answer = "😾 Nē";
     };
     if (prediction > 0.3 && prediction < 0.7) {
-        answer = "Jā";
+        answer = "😺  Jā";
     };
     if (prediction >= 0.7) {
-        answer = "Mau...";
+        answer = "Mau... 🐈";
     };
 
 
