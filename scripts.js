@@ -2,14 +2,18 @@
 
 function askMorakul() {
     let question = $("#answer-text").val();
-    let truth = Math.random() >= 0.4;
-    console.log(truth);
+    let prediction = Math.random();
     let answer = "";
-    if (truth == true) {
-        answer = "Jā";
-    } else {
+    if (prediction <= 0.3) {
         answer = "Nē";
-    }
+    };
+    if (prediction > 0.3 && prediction < 0.7) {
+        answer = "Jā";
+    };
+    if (prediction >= 0.7) {
+        answer = "Mau...";
+    };
+
 
     $("#question").html(question);
     $("#response").html(answer);
